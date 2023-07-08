@@ -1,40 +1,49 @@
-This chrome extension allows you to pass a query parameter to ChatGPT and places the text pased via the "prompt-text" query parameter into the prompt field and clicks the prompt button. This reduces the amount of steps that it takes to go from idea for a prompt to generating a result with Chat GPT.
 
-This extension assumes you are using a Mac running Chrome and passing the query param via an Alfred workflow. However, you can use this extension however you would like as long as you pass the text to the query parameter called "prompt-text" on chat.openai.com.
+# ChatGPT Query Parameter Chrome Extension
 
-# Getting Started
+This Chrome extension enables you to pass a query parameter to ChatGPT. It automates the process of inputting a prompt to the ChatGPT interface, reducing the number of steps needed to generate a result. It takes the text passed via the "prompt-text" query parameter, places it into the prompt field, and activates the prompt button.
 
-You must first sign-up for an account on ```chat.openai.com``` and login. This extension will only work if you are logged into ChatGPT.
+**Note:** This extension is designed for use on a Mac running Chrome and passing the query parameter via an Alfred workflow. However, it can be adapted to other setups as long as the text is passed to the query parameter named "prompt-text" on chat.openai.com.
 
-## Cloning the Repository
+## Prerequisites
 
-1. Ensure you have git installed locally
-2. Change directories to the one where you would like to store these files.
-3. Run this command ```git clone https://github.com/ethanthompson/chatgpt-query-param-extension.git```
+Before you get started, you must sign up for an account on [chat.openai.com](https://chat.openai.com) and log in. The extension will only work if you are logged into ChatGPT.
 
-Alternatively, you can simply [download the files]((https://github.com/ethanthompson/chatgpt-query-param-extension/archive/refs/heads/main.zip)) and unzip them to any location on your computer. I would suggest placing the folder in a location that you know will not be deleted or changed. i.e. Don't store the files in your Downloads folder.
+## Installation
 
-## Create Your Alfred Workflow
+### Cloning the Repository
 
-1. Open the Alfred app and open the workflows tool
-2. Create a blank workflow
-3. Create a keyword input using these settings
-    1. ![Keyword Input](readme/keyword-input.jpg)
-5. Create an "Open URL" action using these settings
-    1. ![Open URL Action](readme/action.jpg)
-    2. Be sure to use ```?prompt-text={query}``` in your URL. This will pass the value of your input to the browser URL and will allow the extension to grab it and place it in the prompt field.
-6. Test your workflow by opening the Alfred field and type ```chat this is a test``` your browser should open and navigate to ```https://chat.openai.com/?prompt-text="this is a test```. If it doesn't, go back and check your steps.
+1. Ensure you have git installed locally.
+2. Navigate to the directory where you would like to store these files.
+3. Run the following command to clone the repository:
 
-## Install the Extension
+   ```
+   git clone https://github.com/ethanthompson/chatgpt-query-param-extension.git
+   ```
 
-1. Open ```chrome://extensions/``` and enabled Developer Mode. This should be a toggle in the upper right.
-2. Click "Load Unpacked"
+You can also [download the files](https://github.com/ethanthompson/chatgpt-query-param-extension/archive/refs/heads/main.zip) and unzip them to any location on your computer. Choose a location that is unlikely to be deleted or changed, i.e., do not store the files in your Downloads folder.
+
+### Creating Your Alfred Workflow
+
+1. Open the Alfred app and navigate to the workflows tool.
+2. Create a blank workflow.
+3. Set up a keyword input using these settings: ![Keyword Input](readme/keyword-input.jpg)
+4. Create an "Open URL" action using these settings: ![Open URL Action](readme/action.jpg)
+
+   Be sure to use `?prompt-text={query}` in your URL. This will pass the value of your input to the browser URL, allowing the extension to grab it and place it in the prompt field.
+
+5. Test your workflow by opening the Alfred field and typing `chat this is a test`. Your browser should open and navigate to `https://chat.openai.com/?prompt-text="this is a test"`. If it doesn't, double-check your steps.
+
+### Installing the Extension
+
+1. Open `chrome://extensions/` and enable Developer Mode (this should be a toggle in the upper right).
+2. Click "Load Unpacked".
 3. Navigate to the folder where you have cloned this repo and select it.
-4. Enable the extension and accept the permission requirements
+4. Enable the extension and accept the permission requirements.
 
-## Run a Test
+## Testing the Extension
 
-1. Open Alfred
-2. Type ```chat this is a test``` and hit ``Enter``
-3. This should open Chrome and you should start seeing ChatGPT responding to the prompt.
-4. You're done! Prompt away.
+1. Open Alfred.
+2. Type `chat this is a test` and hit Enter.
+3. This should open Chrome, and you should start seeing ChatGPT responding to the prompt.
+4. You're done! Now you can input prompts with ease.
